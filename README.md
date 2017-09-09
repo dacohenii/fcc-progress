@@ -4,7 +4,7 @@ This script takes a newline-delimited list of FreeCodeCamp profile URLs and retu
 
 ## Installation
 
-1. Install Tampermonkey.
+1. [Install Tampermonkey.](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 2. Navigate to the Utilities tab in Tampermonkey options.
 3. Paste the following address into the input marked "URL" and click "Import" <https://raw.githubusercontent.com/dacohenii/fcc-progress/master/bulk-fcc-progress.js> 
 4. Confirm the installation.
