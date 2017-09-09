@@ -5,6 +5,7 @@
 // @description  try to take over the world!
 // @author       David Cohen
 // @match        https://www.freecodecamp.org/*
+// @match        https://www.freecodecamp.com/*
 // @grant        GM_registerMenuCommand
 // @grant        GM_setClipboard
 // ==/UserScript==

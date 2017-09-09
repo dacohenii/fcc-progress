@@ -11,6 +11,7 @@
 // @grant        GM_notification
 // @grant        GM_xmlhttpRequest
 // @connect      freecodecamp.org
+// @connect      freecodecamp.com
 // ==/UserScript==
 
 
