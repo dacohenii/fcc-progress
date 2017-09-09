@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         FCC Progress
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  try to take over the world!
 // @author       David Cohen
+// @updateURL    https://raw.githubusercontent.com/dacohenii/fcc-progress/master/bulk-fcc-progress.js
 // @match        https://docs.google.com/spreadsheets/d/1z7v51ypVYYzvgUvGp0uOKZGf7Vyub6FGl9x_Wjn-yQA*
 // @grant        GM_registerMenuCommand
 // @grant        GM_setClipboard
