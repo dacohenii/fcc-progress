@@ -425,27 +425,26 @@
         urls.forEach(function(u, i){
             // skip blank lines
             if(u.length){ 
-                console.log(u);
-                // 
                 GM_xmlhttpRequest({
                   "method": "GET",
                   "url": u,
                   "onerror": function(response){
                     responsesReceived++;
                     result[i] = 'Error - check the console.';
+                    console.error(`Bad response from ${url}:`, response);
                   },
                   "onload": function(response) {
                     responsesReceived++;
-                    console.error(`Bad response from ${url}:`, response);
-                    console.log(response);
                     result[i] = getStudentProgress(parseDOM(response.responseText)).join('\t');
-                    console.log(`result[${i}]: ${result[i]}`);
 
                     // this is how we find out whether we're done.
                     if(responsesReceived >= responsesExpected){
                         GM_setClipboard(result.join('\n'), { type: 'text', mimetype: 'text/plain'});
 
-                        GM_notification('results copied.');
+                        GM_notification({
+                            title: "Results Copied.",
+                            text: "Select the top-left destination cell and paste."
+                        });
                     }
                   }
                 });
