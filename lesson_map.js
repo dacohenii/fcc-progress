@@ -7,7 +7,7 @@
 
  sections = Array.from(certification.querySelectorAll('h3>a'))
 
- sectionData = sections.map(el => [el.innerText, Array.from(certification.querySelectorAll(`${el.href.slice(el.href.indexOf('#'))}>p>a>span:nth-child(1)`)).map(x => x.innerText)]);
+  sectionData = sections.map(el => [el.innerText, Array.from(certification.querySelectorAll(`${el.href.slice(el.href.indexOf('#'))}>p>a`)).map(x => x.innerText.replace(/ (in)?complete$/gi, ''))]);
 
 copy(JSON.stringify(sectionData))
 
