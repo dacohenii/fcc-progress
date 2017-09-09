@@ -371,12 +371,6 @@
                 "Build a Tic Tac Toe Game",
                 "Build a Simon Game"
             ]
-        ],
-        [
-            "Claim Your Front End Development Certificate",
-            [
-                "Claim Your Front End Development Certificate"
-            ]
         ]
     ];
 
