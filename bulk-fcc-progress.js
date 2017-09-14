@@ -276,14 +276,14 @@
                 "Make Instances of Objects with a Constructor Function",
                 "Make Unique Objects by Passing Parameters to our Constructor",
                 "Make Object Properties Private",
-                "Iterate over Arrays with .map",
-                "Condense arrays with .reduce",
-                "Filter Arrays with .filter",
-                "Sort Arrays with .sort",
-                "Reverse Arrays with .reverse",
-                "Concatenate Arrays with .concat",
-                "Split Strings with .split",
-                "Join Strings with .join"
+                "Iterate over Arrays with map",
+                "Condense arrays with reduce",
+                "Filter Arrays with filter",
+                "Sort Arrays with sort",
+                "Reverse Arrays with reverse",
+                "Concatenate Arrays with concat",
+                "Split Strings with split",
+                "Join Strings with join"
             ]
         ],
         [
