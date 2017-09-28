@@ -11,6 +11,10 @@
 // ==/UserScript==
 
 (function() {
+    function sanitizeText(text) {
+        return text.split('').map(char => char.toLowerCase()).filter(char => /[a-z]/.test(char)).join('');
+    }
+
     Set.prototype.intersection = function(setB) {
         var intersection = new Set();
         for (var elem of setB) {
@@ -377,11 +381,11 @@
 
 
     // total complete over all sections
-    const arrComplete = Array.from(document.querySelectorAll('body > div:nth-child(10) > div.col-md-12 > div > table > tbody > tr > td:nth-child(1)')).map(x => x.innerText);
+    const arrComplete = Array.from(document.querySelectorAll('body > div:nth-child(10) > div.col-md-12 > div > table > tbody > tr > td:nth-child(1)')).map(x => sanitizeText(x.innerText));
     const setComplete = new Set(arrComplete);
 
     const allSectionsProgress = sections.map(section => {
-        const [title, assignments] = section;
+        const assignments = section[1].map(sanitizeText);
         // this is the important part...
         const sectionProgress = setComplete.intersection(assignments).size;
 

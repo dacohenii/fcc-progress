@@ -16,6 +16,10 @@
 
 
 (function() {
+    function sanitizeText(text) {
+        return text.split('').map(char => char.toLowerCase()).filter(char => /[a-z]/.test(char)).join('');
+    }
+
     Set.prototype.intersection = function(setB) {
         var intersection = new Set();
         for (var elem of setB) {
@@ -397,11 +401,11 @@
     function getStudentProgress(node = document){
 
         // total complete over all sections
-        const arrComplete = Array.from(node.querySelectorAll('body div table > tbody > tr > td:nth-child(1)')).map(x => x.innerText);
+        const arrComplete = Array.from(node.querySelectorAll('body div table > tbody > tr > td:nth-child(1)')).map(x => sanitizeText(x.innerText));
         const setComplete = new Set(arrComplete);
 
         return sections.map(section => {
-            const [title, assignments] = section;
+            const assignments = section[1].map(sanitizeText);
             // this is the important part...
             const sectionProgress = setComplete.intersection(assignments).size;
 
@@ -414,7 +418,7 @@
         const strUrls = prompt('Paste all URLs here and click OK');
         if(!strUrls){ return false; }
 
-        const urls = strUrls.split('\n');
+        const urls = strUrls.split(' ');
 
         // create a result container array
         const result = urls.map(url => "");
