@@ -418,7 +418,7 @@
         const strUrls = prompt('Paste all URLs here and click OK');
         if(!strUrls){ return false; }
 
-        const urls = strUrls.split(' ');
+        const urls = strUrls.split(/[ \n]+/);
 
         // create a result container array
         const result = urls.map(url => "");
